@@ -31,9 +31,6 @@
 </template>
 
 <script>
-// 导入axios
-import axios from 'axios'
-
 export default {
   data () {
     return {
@@ -45,7 +42,7 @@ export default {
   },
   methods: {
     loadData () {
-      axios.get('http://localhost:3000/heroes')
+      this.$http.get('/heroes')
         .then((res) => {
           if (res.status === 200) {
             this.list = res.data
@@ -61,7 +58,7 @@ export default {
         return
       }
       // 发送请求
-      axios.delete(`http://localhost:3000/heroes/${id}`)
+      this.$http.delete(`/heroes/${id}`)
         .then((res) => {
           if (res.status === 200) {
             // 删除成功

@@ -8,7 +8,9 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.css'
 import '@/assets/css/index.css'
 
-Vue.config.productionTip = false
+// 插件的使用
+import MyAxios from '@/plugins/myaxios'
+Vue.use(MyAxios)
 
 /* eslint-disable no-new */
 new Vue({
